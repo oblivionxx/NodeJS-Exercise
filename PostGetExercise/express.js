@@ -43,6 +43,7 @@ app.use(session({secret: 'todotopsecret'}))
     res.redirect('/todo');
 })
 
+
 /* Redirects to the to do list if the page requested is not found */
 .use(function(req, res, next){
     res.redirect('/todo');
