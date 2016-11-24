@@ -29,6 +29,7 @@ app.use(session({secret: 'todotopsecret'}))
     res.redirect('/todo');
 })
 
+
 .get('/todo/modify/:newName', urlencodedParser, function(req, res) {
     req.session.fullname = req.params.newName;
     res.render('todo.ejs', {todolist: req.session.todolist, fullname: req.session.fullname});
