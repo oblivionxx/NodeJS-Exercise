@@ -35,7 +35,7 @@ app.use(session({secret: 'todotopsecret'}))
     res.render('todo.ejs', {todolist: req.session.todolist, fullname: req.session.fullname});
 })
 
-
+ 
 .get('/todo/delete/:id', function(req, res) {
     if (req.params.id != '') {
         req.session.todolist.splice(req.params.id, 1);
