@@ -25,14 +25,9 @@ app.use(session({secret: 'todotopsecret'}))
 .post('/todo/add/', urlencodedParser, function(req, res) {
     if (req.body.newtodo != '') {
         req.session.todolist.push(req.body.newtodo);
+        console.log(req.body.newtodo);
     }
     res.redirect('/todo');
-})
-
-
-.get('/todo/modify/:newName', urlencodedParser, function(req, res) {
-    req.session.fullname = req.params.newName;
-    res.render('todo.ejs', {todolist: req.session.todolist, fullname: req.session.fullname});
 })
 
  
